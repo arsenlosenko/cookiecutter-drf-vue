@@ -1,0 +1,7 @@
+{
+    "project_slug": "drf_app",
+    "project_name": "config",
+    "_copy_without_render": [
+        "*.html"
+    ]
+}
