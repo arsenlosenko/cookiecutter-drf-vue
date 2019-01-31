@@ -23,12 +23,13 @@ cookiecutter https://github.com/arsenlosenko/cookiecutter-drf-vue
 ### Local Development
 1. Create virtualenv
 
-``bash
+```bash
 pip install virtualenv --user
 cd <your-cookicutter-project>
 virtualenv -p python3 venv
 source venv/bin/activate
 ```
+
 2. Install python dependencies
 
 ```bash
