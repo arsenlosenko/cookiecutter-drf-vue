@@ -13,19 +13,55 @@ Then create your project:
 cookiecutter https://github.com/arsenlosenko/cookiecutter-drf-vue
 ```
 
-After couple of prompts (namely the name of your project), you will be presented with directory, which includes:
+### Features
+* Supports Django 2.0
+* [Django REST Framework](https://github.com/encode/django-rest-framework) already included
+* Vue JS with configured Babel and Webpack:
+* [Vuex](https://github.com/vuejs/vuex)
+* [vue-router](https://github.com/vuejs/vue-router)
 
-* Django main project directory (with `settings.py`)
-* `requirements.txt` file with dependencies for backend
-* config files for Vue JS:
-    * `package.json` - file with dependencies and package information
-    * `webpack.config.js` - webpack config (bundles only `*.vue` and `*.js` files)
-    * `.babelrc` - config for babel
-* `frontend` app which contains Vue JS project. Besides plain Vue, it also uses [Vuex](https://github.com/vuejs/vuex) and [vue-router](https://github.com/vuejs/vue-router)
-
-### Install dependencies and run the app
+### Local Development
 1. Create virtualenv
+
+``bash
+pip install virtualenv --user
+cd <your-cookicutter-project>
+virtualenv -p python3 venv
+source venv/bin/activate
+```
 2. Install python dependencies
+
+```bash
+# inside of virtualenv
+pip install -r requirements.txt
+```
 3. Install javscript dependencies
+
+```bash
+# inside projects directory
+npm i
+
+```
 4. Build development bundle
-5. Runserver
+
+```bash
+# just build dev bundle
+npm run dev_build
+
+# rebuild on file change
+npm run dev_serv
+
+# build for production
+npm run prod_build
+
+```
+5. Initial migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+6. Runserver
+```bash
+python manage.py runserver
+```
